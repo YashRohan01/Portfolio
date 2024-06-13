@@ -1,0 +1,1 @@
+SELECT * FROM product WHERE price BETWEEN min_price AND max_price;

@@ -1,0 +1,60 @@
+body{
+    background-color:#FBF9F1;
+}
+
+.navbar-pic{
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.heading{
+   display: inline;
+   color: #E3651D !important;
+
+}
+
+.lead{
+    font-weight: bold;
+}
+
+.hero{
+    background-color: #FFF9D0;
+
+}
+
+
+.profile-pic{
+    border-radius: 50%;
+}
+
+.contrast{
+    color: wheat;
+}
+
+
+.pr-head{
+    font-family: 'Human sans';
+}
+
+.icon-square {
+    width: 3rem;
+    height: 3rem;
+    border-radius: .75rem;
+}
+
+#carouselExampleIndicators .carousel-control-prev-icon,
+#carouselExampleIndicators .carousel-control-next-icon{
+    filter: invert(100%);
+}
+
+.contact{
+    display: inline-flexbox;
+    justify-content: center;
+    
+}
+
+.babu{
+    height: 100px;
+    border-radius: 50%;
+}

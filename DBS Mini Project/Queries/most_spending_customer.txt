@@ -1,0 +1,9 @@
+SELECT customer_id, name, MAX(total_cost) AS max_total_cost
+FROM (
+    SELECT c.customer_id, c.name, SUM(o.cost) AS total_cost
+    FROM orders o
+    JOIN customer c ON o.customer_id = c.customer_id
+    GROUP BY c.customer_id, c.name
+) subquery
+GROUP BY customer_id, name
+ORDER BY max_total_cost DESC;

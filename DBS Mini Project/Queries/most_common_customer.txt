@@ -1,0 +1,4 @@
+SELECT customer_id, name, COUNT(order_id) AS order_count
+FROM orders NATURAL JOIN customer
+GROUP BY customer_id, name
+ORDER BY order_count DESC;

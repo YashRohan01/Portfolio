@@ -1,0 +1,151 @@
+1. CREATE TABLE customer(customer_id varchar (20),
+			name varchar (20), 
+			password varchar (20), 
+			contact numeric(10),
+			address varchar (300));
+
+
+2. ALTER TABLE customer ADD CONSTRAINT pk_customer PRIMARY KEY (customer_id);
+
+
+3. CREATE TABLE product(product_id varchar (15),
+			name varchar (20),
+			company varchar (20),
+			price numeric (10),
+			supplier_id varchar(20),
+			genre varchar (50),
+			stock numeric (6));
+
+4.ALTER TABLE product ADD CONSTRAINT pk_product PRIMARY KEY (product_id);
+
+
+5. CREATE TABLE orders (order_id varchar(20),
+			cost numeric(6),
+			products varchar (500),
+			customer_id varchar (20));
+
+6. ALTER TABLE orders ADD CONSTRAINT pk_orders PRIMARY KEY (order_id);
+
+
+7. CREATE TABLE supplier (supplier_id varchar (20),
+			  product_id varchar (15),
+			  address varchar(300),
+			  moq numeric (6));
+
+
+8. ALTER TABLE supplier ADD CONSTRAINT pk_supplier PRIMARY KEY (supplier_id);
+
+
+9. CREATE TABLE shipping_info  (shipping_id varchar(15), 
+				products varchar (200),
+				shipping_address varchar (300),
+				shipping_date date,
+				delivery_date date);
+
+10. ALTER TABLE shipping_info ADD CONSTRAINT pk_shipping_info PRIMARY KEY (SHIPPING_ID);
+
+
+11. ALTER TABLE orders ADD CONSTRAINT fk_orders FOREIGN KEY (customer_id)             REFERENCES customer (customer_id); 
+
+
+12. ALTER TABLE orders ADD CONSTRAINT fk_orders2 FOREIGN KEY (product_id) REFERENCES product (product_id); 
+
+
+13. ALTER TABLE product ADD CONSTRAINT fk_product FOREIGN KEY (supplier_id) REFERENCES supplier (supplier_id);
+
+
+14. ALTER TABLE shipping_info ADD CONSTRAINT fk_shipping_info1 FOREIGN KEY (product_id) REFERENCES product (product_id);
+
+15. CREATE TABLE buys ( customer_id varchar (20),
+			name varchar (20),
+			order_id varchar (20),
+			review varchar (20),
+			PRIMARY KEY (customer_id,name,order_id));
+
+16. CREATE TABLE deliver (order_id varchar (20),
+			  shipping_id varchar (20),
+			  cost numeric (6),
+			  products varchar (20),
+			  shipping_date date,
+			  delivery_date date);
+
+17. CREATE TABLE supply (product_id varchar (20),
+			shipping_id varchar (20),
+			supplier_id varchar (20),
+			quantity numeric (6));
+COMMIT;
+
+
+
+15. INSERT INTO supplier values ('1','1','Udupi',150);
+
+16. INSERT INTO product values ('1','Tshirt-HnM',699,'1','caual,shirt,tshirt',1000);
+
+17. INSERT INTO supplier values ('2','1','Bangalore',150);
+ 
+18. INSERT INTO supplier values ('3','3','Udupi',150);
+
+19. INSERT INTO supplier values ('4','2','Delhi',150);
+
+20. INSERT INTO supplier values ('5','4','Noida',150);
+
+21. INSERT INTO supplier values ('6','1','Ranchi',100);
+
+22. INSERT INTO supplier values ('7','2','Ranchi',21);
+
+23. INSERT INTO supplier values ('8','9','Bangalore',10);
+
+24. INSERT INTO supplier values ('9','3','Kolkata',150);
+
+25. INSERT INTO supplier values ('10','7','Bangalore',150);
+
+26. INSERT INTO supplier values ('11','7','Mumbai',250);
+
+27. INSERT INTO supplier values ('12','7','Pune',400);
+
+28. INSERT INTO supplier values ('13','8','Chennai',15);
+
+29. INSERT INTO supplier values ('14','11','Manipal',1500);
+
+30. INSERT INTO supplier values ('15','10','Kolkata',155);
+
+31. INSERT INTO supplier values ('16','9','Ranchi',16);
+
+32. INSERT INTO supplier values ('17','9','Mumbai',20);
+
+33. INSERT INTO supplier values ('18','9','NOIDA',25);
+
+34. INSERT INTO supplier values ('19','10','Raipur',100);
+
+35. INSERT INTO supplier values ('20','8','Ahemdabad',500);
+
+36. INSERT INTO product VALUES ('2','Jeans-Black','Van Heusen',699,'2','jeans,pants,casual',10000);
+
+37. INSERT INTO product VALUES ('3','Shirt-Red','ABC',399,'1','shirt,tsshirt',500);
+
+38. INSERT INTO product VALUES ('4','Socks-black','ABC',299,'9','shoes,socks,cloth',120);
+
+39. INSERT INTO product VALUES ('5','Shoes-Boot','Woodland',1200,'15','shoes, socks,footwear',123);
+
+40. INSERT INTO product VALUES ('6','Sports-shoes','Reebok',2599,'10','sports,shoes,luxury',50);
+
+41. INSERT INTO product VALUES ('7','Suits-Blueberry','Vlueberry',4999,'5','suits,expensive,luxury',15);
+
+41. INSERT INTO product VALUES ('8','Full Shirt','Bewakoof',699,'4','shirt,casual,everyday',300);
+
+41. INSERT INTO product VALUES ('9','Sleeveless shirt','Pantaloons',399,'2','summer,shirt,sleevelss',35);
+
+41. INSERT INTO product VALUES ('10','Pants','Westside',1099,'9','jeans,pants,formal',69);
+
+41. INSERT INTO product VALUES ('11','Shorts','Myntra',299,'7','shorts,women,casual',1);
+
+41. INSERT INTO product VALUES ('12','Kurta','Fabindia',999,'20','indian,ethnic',35);
+
+41. INSERT INTO product VALUES ('13','Kurti','Fabindia',1099,'19','indian,ethnic',19);
+
+41. INSERT INTO product VALUES ('14','Salwaar','Pantaloon',499,'16','indian,ehtnic',15);
+
+41. INSERT INTO product VALUES ('15','Skirt','Pantaloon',799,'14','western,skirt',10);
+
+
+52.
